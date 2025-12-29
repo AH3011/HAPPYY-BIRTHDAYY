@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>🎟 H 🎟</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  height:100vh;
+  background:linear-gradient(135deg,#ffe6f0,#ff4d6d);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial, sans-serif;
+  overflow:hidden;
+}
+
+/* LOGIN */
+#loginBox{
+  background:rgba(255,255,255,0.35);
+  padding:24px;
+  border-radius:16px;
+  text-align:center;
+}
+#loginBox h2{font-family:cursive;margin-bottom:10px}
+input,button{
+  width:100%;
+  padding:12px;
+  margin-top:14px;
+  border:none;
+  border-radius:8px;
+  font-size:1rem;
+}
+button{background:#ff6b81;color:white;font-weight:bold}
+
+/* COUNTDOWN */
+#dotScreen{
+  position:fixed;
+  inset:0;
+  background:black;
+  color:white;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  font-size:64px;
+  font-weight:bold;
+  z-index:5;
+  text-align:center;
+}
+
+/* HEART */
+#heartScene{
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:black;
+  z-index:6;
+  flex-direction:column;
+}
+#heartText{
+  color:#ff5c8d;
+  font-family:cursive;
+  font-size:1.6rem;
+  margin-top:16px;
+}
+
+/* ENVELOPE */
+#envelopeScene{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.2);
+  justify-content:center;
+  align-items:center;
+  z-index:4;
+}
+.envelope{
+  width:260px;
+  height:170px;
+  background:white;
+  position:relative;
+  border-radius:6px;
+}
+.flap{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:80px;
+  background:white;
+  clip-path:polygon(0 0,50% 100%,100% 0);
+}
+.sticker{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:40px;
+  cursor:pointer;
+}
+
+/* LETTER CARD */
+#letterCard{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  z-index:10;
+  justify-content:center;
+  align-items:center;
+}
+#letter{
+  width:90%;
+  max-width:420px;
+  max-height:80vh;
+  background:#ff4d6d;
+  color:white;
+  padding:22px;
+  border-radius:14px;
+  overflow-y:auto;
+  line-height:1.9;
+  font-style:italic;
+}
+
+/* Arabic poetry spacing */
+.poetry-line{
+  display:block;
+  margin:14px 0;
+  text-align:right;
+  font-size:1.05rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="loginBox">
+  <h2>✨ What’s the magic word? ✨</h2>
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <button id="unlockBtn">Unlock</button>
+</div>
+
+<!-- COUNTDOWN -->
+<div id="dotScreen"></div>
+
+<!-- HEART -->
+<div id="heartScene">
+<svg width="260" height="240" viewBox="0 0 24 24" fill="none" stroke="#ff5c8d" stroke-width="1.5">
+  <path d="M12 21s-6.7-4.6-9.5-8.3C-0.4 8.4 2.4 3 7 4.3 9.1 4.9 10.5 6.5 12 8c1.5-1.5 2.9-3.1 5-3.7 4.6-1.3 7.4 4.1 4.5 8.4C18.7 16.4 12 21 12 21z"/>
+</svg>
+<div id="heartText"></div>
+</div>
+
+<!-- ENVELOPE -->
+<div id="envelopeScene">
+  <div class="envelope">
+    <div class="flap"></div>
+    <div class="sticker" id="sticker">🎟</div>
+  </div>
+</div>
+
+<!-- LETTER -->
+<div id="letterCard">
+  <div id="letter">
+Kol sana wenty tayeba ya 2amar <br>
+enta nour 3einy w ro7i,<br>
+w kol youm bde2ol rabena ykhalik<br>
+lena, w ydyman far7etna sawa.<br><br>
+
+Ma fi kalam yewafi 7obbi lek,<br>
+w ma feesh ghareeb yefham omri men gherak.<br><br>
+
+Enty albi, nafsi, w omri,<br>
+w men gherek ma fi haya.<br><br>
+
+Ya 7ayati, enty elly bi kuol shi2 3andi,<br>
+w ma 3omri naseet maw3idna bel sa3ada.<br><br>
+
+Law kan el donya tegi min ghairak,<br>
+kanat 3ashra shaware3 be damaa.<br><br>
+
+Bas b7obak, el donya betdawwar,<br>
+w ana mabsout geddan enek ma3aya.<br><br>
+
+Entr msh mota5ayel ana a3at ad eh ba3mel fi dah,<br>
+ah msh a7la 7aga walak the smoothest,<br>
+bas yarab ye3gebek.<br><br>
+
+<span class="poetry-line">حياتي 💖</span>
+<span class="poetry-line">أنت الحكاية اللي ما تخلص،</span>
+<span class="poetry-line">والأمان اللي يسكن القلب.</span>
+
+<span class="poetry-line">فكان اليوم عيد،</span>
+<span class="poetry-line">فكان اليوم ميلاد حبيبي،</span>
+<span class="poetry-line">ففي هواه أُقتل، وفي جماله أذوب.</span>
+
+<span class="poetry-line">فكان نور عيني يبرق،</span>
+<span class="poetry-line">فجعلت لحبيبي قلبي ولم يخِب،</span>
+<span class="poetry-line">بل برق وفي نفسي زاد سِكته.</span>
+
+<span class="poetry-line">فاز بحبيبي بداخله يشجعه،</span>
+<span class="poetry-line">وكان غافلًا بتقصيري عليه.</span>
+
+<span class="poetry-line">فكان فضل حبيبي عليّ،</span>
+<span class="poetry-line">كفضل القمر على سائر الكواكب.</span>
+
+<span class="poetry-line">وكانت دموعه لؤلؤ،</span>
+<span class="poetry-line">وكان قلبي على دموعه ينجرح.</span>
+
+<span class="poetry-line">إن تدمع عينه،</span>
+<span class="poetry-line">يقطر قلبي.</span>
+
+<span class="poetry-line">وإن كان حبيبي أميرًا،</span>
+<span class="poetry-line">فلا يعتذر…</span>
+<span class="poetry-line">فليس هناك شيء يُتأسف له.</span>
+  </div>
+</div>
+
+<script>
+const PASSWORD="301210";
+
+const loginBox=document.getElementById("loginBox");
+const dotScreen=document.getElementById("dotScreen");
+const heartScene=document.getElementById("heartScene");
+const heartText=document.getElementById("heartText");
+const envelopeScene=document.getElementById("envelopeScene");
+const letterCard=document.getElementById("letterCard");
+
+document.getElementById("unlockBtn").onclick=()=>{
+  if(document.getElementById("passwordInput").value===PASSWORD){
+    loginBox.style.display="none";
+    startCountdown();
+  }else alert("Wrong password 💔");
+};
+
+function startCountdown(){
+  const words=["3","2","1","I","LOVE","YOU","YA","LOLATYYY"];
+  let i=0;
+  dotScreen.style.display="flex";
+  const t=setInterval(()=>{
+    dotScreen.innerText=words[i];
+    i++;
+    if(i>=words.length){
+      clearInterval(t);
+      setTimeout(showHeart,700);
+    }
+  },800);
+}
+
+function showHeart(){
+  dotScreen.style.display="none";
+  heartScene.style.display="flex";
+  typeText(heartText,"I love you lolatyyy",()=>{
+    setTimeout(()=>{
+      heartScene.style.display="none";
+      envelopeScene.style.display="flex";
+    },1200);
+  });
+}
+
+function typeText(el,text,done){
+  let i=0; el.innerHTML="";
+  const t=setInterval(()=>{
+    el.innerHTML+=text[i++];
+    if(i>=text.length){clearInterval(t);done();}
+  },90);
+}
+
+document.getElementById("sticker").onclick=()=>{
+  envelopeScene.style.display="none";
+  letterCard.style.display="flex";
+};
+</script>
+
+</body>
+</html>
